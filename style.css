@@ -83,7 +83,21 @@ body {
     margin-bottom: 15px;
     color: #8B0000;
 }
+.step-box h3 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
+.step-box h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #8B0000; /* deep crimson */
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
 /* INFO SECTION */
 
 .info-section {
@@ -148,6 +162,19 @@ body {
 .mentee-btn:hover {
     background: #333;
     transform: translateY(-3px);
+}
+.site-footer {
+    background-color: #1C1C1C;
+    color: #F8F6F3;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.site-footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 /* Mentor Page Enhancements */
 
