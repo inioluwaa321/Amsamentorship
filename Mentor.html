@@ -1,1 +1,64 @@
-mentor.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentor Commitment – AMSA Mentorship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="mentor-hero">
+    <h1>Before You Apply as a Mentor</h1>
+    <h3>
+        Being a mentor in the AMSA Academic Mentorship Program is a leadership responsibility.
+        By applying, you agree to guide, support, and communicate with your mentee consistently.
+        <br><br>
+        All mentors will receive a certificate from AMSA at the end of the session.
+        To qualify for the certificate, you must:
+        <ol>
+            <li>Be assigned an active mentee</li>
+            <li>Attend the AMSA Mentorship Training Program</li>
+            <li>Maintain consistent mentorship from start to finish</li>
+        </ol>
+        Please note: Mentors who fail to fulfill their duties or are inconsistent with their mentee may be removed from the program.
+        In such cases, the mentee will be reassigned to another mentor to ensure continuity.
+    </h3>
+</header>
+
+<section class="mentor-checkbox">
+    <label>
+        <input type="checkbox" id="mentor-ack">
+        I understand and wish to continue
+    </label>
+</section>
+
+<section class="mentor-levels" id="mentor-levels" style="display:none;">
+    <h2>Select your level below:</h2>
+    <div class="level-buttons">
+        <a href="#" class="mentor-btn">200 Level Mentors</a>
+        <a href="#" class="mentor-btn">300 Level Mentors</a>
+        <a href="#" class="mentor-btn">400 Level Mentors</a>
+        <a href="#" class="mentor-btn">500 Level C Mentors</a>
+        <a href="#" class="mentor-btn">500 Level B Mentors</a>
+        <a href="#" class="mentor-btn">500 Level A Mentors</a>
+        <a href="#" class="mentor-btn">600 Level Mentors</a>
+    </div>
+</section>
+
+<script>
+    // Checkbox logic to show buttons
+    const checkbox = document.getElementById('mentor-ack');
+    const levelsSection = document.getElementById('mentor-levels');
+
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
+            levelsSection.style.display = 'block';
+        } else {
+            levelsSection.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
