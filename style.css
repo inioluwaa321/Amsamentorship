@@ -87,16 +87,11 @@ body {
     position: relative;
     padding-bottom: 10px;
 }
-
-.step-card h2::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
+.accent-line {
     width: 60px;
     height: 3px;
     background: #8B0000;
+    margin: 8px auto 15px auto;
     border-radius: 2px;
 }
 /* INFO SECTION */
