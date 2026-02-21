@@ -179,63 +179,100 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* Mentor Page Enhancements */
+/* ===== Mentor Page Styling ===== */
+
+/* Hero section */
+.mentor-hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.1)),
+                url('https://i.postimg.cc/MKBvZ9vW/IMG-5187.jpg'); /* you can choose a mentor-related image */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.mentor-hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+.mentor-hero h3 {
+    font-size: 16px;
+    font-weight: normal;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.85);
+    color: #1C1C1C;
+    padding: 20px;
+    border-radius: 10px;
+}
 
 /* Checkbox section */
 .mentor-checkbox {
     text-align: center;
     margin: 40px 0;
-    font-size: 20px;
 }
 
 .mentor-checkbox input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-    margin-right: 12px;
-    accent-color: #8B0000; /* Red color for checkbox */
+    margin-right: 10px;
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
-/* Levels Section */
-#mentor-levels {
+.mentor-checkbox label {
+    font-size: 18px;
+    color: #1C1C1C;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Level buttons container */
+.mentor-levels {
     text-align: center;
-    margin: 40px 0;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0; /* hidden initially, JS will fade it in */
+    margin: 30px 0;
+    transition: opacity 0.5s ease;
 }
 
-#mentor-levels.show {
-    opacity: 1;
+.mentor-levels h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #8B0000; /* deep crimson */
 }
 
-/* Subtitle for levels */
-#mentor-levels h2 {
-    font-size: 28px;
-    color: #8B0000;
-    margin-bottom: 25px;
-}
-
-/* Buttons container */
+/* Buttons styling */
 .level-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-/* Individual buttons */
 .level-buttons .mentor-btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    background: linear-gradient(45deg, #8B0000, #b30000);
+    display: inline-block;
+    padding: 20px 35px;
+    background: linear-gradient(135deg, #8B0000, #B22222);
     color: white;
+    font-weight: bold;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(139,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .level-buttons .mentor-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(139,0,0,0.6);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
+/* Optional: smooth fade-in when checkbox is checked */
+.mentor-levels.show {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
