@@ -149,3 +149,63 @@ body {
     background: #333;
     transform: translateY(-3px);
 }
+/* Mentor Page Enhancements */
+
+/* Checkbox section */
+.mentor-checkbox {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 20px;
+}
+
+.mentor-checkbox input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    accent-color: #8B0000; /* Red color for checkbox */
+}
+
+/* Levels Section */
+#mentor-levels {
+    text-align: center;
+    margin: 40px 0;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0; /* hidden initially, JS will fade it in */
+}
+
+#mentor-levels.show {
+    opacity: 1;
+}
+
+/* Subtitle for levels */
+#mentor-levels h2 {
+    font-size: 28px;
+    color: #8B0000;
+    margin-bottom: 25px;
+}
+
+/* Buttons container */
+.level-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual buttons */
+.level-buttons .mentor-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #8B0000, #b30000);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(139,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.level-buttons .mentor-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139,0,0,0.6);
+}
+
