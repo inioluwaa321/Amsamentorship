@@ -138,13 +138,13 @@ body {
 }
 
 .cta-buttons a {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 15px;
+    padding: 20px 35px;  /* taller and wider */
+    font-size: 18px;      /* bigger text */
+    border-radius: 10px;  /* slightly rounder corners */
+    cursor: pointer;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mentor-btn {
