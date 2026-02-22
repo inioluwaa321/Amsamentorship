@@ -352,3 +352,7 @@ body {
     opacity: 1 !important;
     visibility: visible !important;
 }
+.mentor-levels {
+    position: relative;
+    z-index: 9999;
+}
