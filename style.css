@@ -335,3 +335,20 @@ body {
     .level-buttons { gap: 15px; }
     .level-buttons .mentor-btn { padding: 16px 25px; font-size: 14px; }
 }
+#mentor-levels {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.level-buttons {
+    display: flex !important;
+}
+
+.mentor-btn {
+    background: black !important;
+    color: yellow !important;
+    border: 3px solid red !important;
+    font-size: 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
