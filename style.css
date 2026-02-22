@@ -194,6 +194,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #8B0000;
+}
+
 
 .mentor-hero h3 {
     font-size: 18px;
@@ -204,6 +210,13 @@ body {
     color: #1C1C1C;
     padding: 30px 25px;
     border-radius: 15px;
+}
+.accent-line {
+    width: 60px;
+    height: 3px;
+    background: #8B0000;
+    margin: 8px auto 15px auto;
+    border-radius: 2px;
 }
 
 .mentor-hero h3 ol {
