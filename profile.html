@@ -1,25 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Create Profile - AMSA Mentorship</title>
+  <title>Complete Profile - AMSA Mentorship</title>
   <meta charset="UTF-8" />
 </head>
 <body>
 
   <h2>Complete Your Profile</h2>
 
- <form id="profileForm">
-  <input type="text" id="fullName" placeholder="Full Name" required /><br><br>
-  <input type="text" id="matricNumber" placeholder="Matric Number" required /><br><br>
-  <input type="text" id="level" placeholder="Level (e.g. 300L)" required /><br><br>
-  <input type="text" id="gender" placeholder="Gender" required /><br><br>
-  <input type="text" id="religion" placeholder="Religion" /><br><br>
-  <textarea id="hobbies" placeholder="Hobbies"></textarea><br><br>
-  <textarea id="strengths" placeholder="Academic Strengths"></textarea><br><br>
-  <textarea id="weaknesses" placeholder="Academic Weaknesses"></textarea><br><br>
+  <form id="profileForm">
 
-  <button type="submit">Save Profile</button>
-</form>
+    <input type="text" id="fullName" placeholder="Full Name" required />
+    <br><br>
+
+    <input type="text" id="matricNumber" placeholder="Matric Number" required />
+    <br><br>
+
+    <!-- Level Dropdown -->
+    <label>Current Level:</label><br>
+    <select id="level" required>
+      <option value="">Select Level</option>
+      <option value="100L">100L</option>
+      <option value="200L">200L</option>
+      <option value="300L">300L</option>
+      <option value="400L">400L</option>
+      <option value="500L A">500L A</option>
+      <option value="500L B">500L B</option>
+      <option value="500L C">500L C</option>
+      <option value="600L">600L</option>
+    </select>
+    <br><br>
+
+    <!-- Gender Dropdown -->
+    <label>Gender:</label><br>
+    <select id="gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <br><br>
+
+    <!-- Religion Dropdown -->
+    <label>Religion:</label><br>
+    <select id="religion">
+      <option value="">Select Religion</option>
+      <option value="Christianity">Christianity</option>
+      <option value="Islam">Islam</option>
+      <option value="Other">Other</option>
+    </select>
+    <br><br>
+
+    <!-- About Section -->
+    <label>Tell us a little about yourself and your interests:</label><br>
+    <textarea id="hobbies"></textarea>
+    <br><br>
+
+    <!-- Academic Strength -->
+    <label>What subjects or areas are you academically strong in?</label><br>
+    <textarea id="strengths"></textarea>
+    <br><br>
+
+    <!-- Academic Challenge -->
+    <label>What courses or areas challenge you?</label><br>
+    <textarea id="weaknesses"></textarea>
+    <br><br>
+
+    <button type="submit">Save Profile</button>
+
+  </form>
 
   <p id="message"></p>
 
