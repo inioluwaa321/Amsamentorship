@@ -2,11 +2,46 @@
 <html>
 <head>
   <title>Dashboard - AMSA Mentorship</title>
+  <meta charset="UTF-8" />
 </head>
 <body>
 
-  <h1>Welcome to Your Dashboard</h1>
-  <p>If you see this after login, authentication works.</p>
+  <h1 id="welcome"></h1>
+  <button id="logoutBtn">Logout</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlwZDPWDZJ6P1cWnJZV_aIdy6MzR9EWKs",
+  authDomain: "amsa-mentorship-program.firebaseapp.com",
+  projectId: "amsa-mentorship-program",
+  storageBucket: "amsa-mentorship-program.firebasestorage.app",
+  messagingSenderId: "161964406332",
+  appId: "1:161964406332:web:00618295ad3d6b9f03b539",
+  measurementId: "G-JQSHGGTDRT"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const welcome = document.getElementById("welcome");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        welcome.innerText = "Welcome, " + user.email;
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      window.location.href = "login.html";
+    });
+  </script>
 
 </body>
 </html>
