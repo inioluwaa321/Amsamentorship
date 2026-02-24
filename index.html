@@ -82,7 +82,10 @@
   const auth = getAuth(app);
   const db = getFirestore(app);
 
-  console.log("Firebase Connected Successfully");
+  document.body.insertAdjacentHTML(
+  "beforeend",
+  "<p style='color:green; font-weight:bold;'>Firebase Connected Successfully</p>"
+);
 </script>
 </body>
 </html>
