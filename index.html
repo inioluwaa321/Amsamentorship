@@ -62,6 +62,27 @@
     <footer class="site-footer">
     <p>© 2026 AMSA Academic Mentorship Program | Ignitus Era</p>
 </footer>
+<!-- Firebase SDKs -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+  const firebaseConfig = {
+ apiKey: "AIzaSyBlwZDPWDZJ6P1cWnJZV_aIdy6MzR9EWKs",
+  authDomain: "amsa-mentorship-program.firebaseapp.com",
+  projectId: "amsa-mentorship-program",
+  storageBucket: "amsa-mentorship-program.firebasestorage.app",
+  messagingSenderId: "161964406332",
+  appId: "1:161964406332:web:00618295ad3d6b9f03b539",
+ measurementId: "G-JQSHGGTDRT"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  console.log("Firebase Connected Successfully");
+</script>
 </body>
 </html>
