@@ -36,12 +36,28 @@
     const logoutBtn = document.getElementById("logoutBtn");
 
     onAuthStateChanged(auth, async (user) => {
-      alert("Auth triggered");
+  alert("Auth triggered");
 
-      if (!user) {
-        welcome.innerText = "Not logged in";
-        return;
-      }
+  if (!user) {
+    welcome.innerText = "Not logged in";
+    return;
+  }
+
+  try {
+    const userDoc = await getDoc(doc(db, "users", user.uid));
+
+    if (!userDoc.exists()) {
+      welcome.innerText = "Profile not found for this account.";
+      return;
+    }
+
+    const userData = userDoc.data();
+    welcome.innerText = "Welcome " + userData.fullName;
+
+  } catch (error) {
+    alert("Firestore error: " + error.message);
+  }
+});
 
       // Fetch profile from Firestore
       const userDoc = await getDoc(doc(db, "users", user.uid));
