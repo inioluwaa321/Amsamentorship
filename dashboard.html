@@ -48,20 +48,32 @@
     const logoutBtn = document.getElementById("logoutBtn");
 
     onAuthStateChanged(auth, async (user) => {
-      if (!user) {
-        window.location.href = "login.html";
-        return;
-      }
+  alert("Auth state triggered");
 
-      const userDoc = await getDoc(doc(db, "users", user.uid));
+  if (!user) {
+    alert("No user found");
+    window.location.href = "login.html";
+    return;
+  }
 
-      if (!userDoc.exists()) {
-        window.location.href = "profile.html";
-        return;
-      }
+  alert("User detected");
 
-      const userData = userDoc.data();
-      welcome.innerText = "Welcome, " + userData.fullName;
+  const userDoc = await getDoc(doc(db, "users", user.uid));
+  alert("Fetched user document");
+
+  if (!userDoc.exists()) {
+    alert("Profile not found");
+    window.location.href = "profile.html";
+    return;
+  }
+
+  alert("Profile exists");
+
+  const userData = userDoc.data();
+  welcome.innerText = "Welcome, " + userData.fullName;
+
+  alert("Welcome text set");
+});
 
       // 🔎 DEBUG: Show all sessions
       const sessionsRef = collection(db, "sessions");
