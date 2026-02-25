@@ -60,20 +60,30 @@ onAuthStateChanged(auth, async (user) => {
   welcome.innerText = "Welcome, " + userData.fullName;
 
   // Get active session
-  const sessionQuery = query(collection(db, "sessions"), where("active", "==", true));
-  const sessionSnapshot = await getDocs(sessionQuery);
+  const sessionsRef = collection(db, "sessions");
+const sessionSnapshot = await getDocs(sessionsRef);
 
-  if (sessionSnapshot.empty) {
-    sessionSection.innerHTML = "<p>No active session currently.</p>";
-    return;
+let activeSession = null;
+
+sessionSnapshot.forEach((docSnap) => {
+  const data = docSnap.data();
+  if (data.active === true) {
+    activeSession = {
+      id: docSnap.id,
+      ...data
+    };
   }
+});
 
-  const sessionDoc = sessionSnapshot.docs[0];
-  const sessionId = sessionDoc.id;
-  const sessionName = sessionDoc.data().name;
+if (!activeSession) {
+  sessionSection.innerHTML = "<p>No active session currently.</p>";
+  return;
+}
 
-  sessionSection.innerHTML = `<h3>${sessionName}</h3>`;
+const sessionId = activeSession.id;
+const sessionName = activeSession.name;
 
+sessionSection.innerHTML = `<h3>${sessionName}</h3>`;
   // Check existing registrations
   const regQuery = query(
     collection(db, "sessionParticipants"),
