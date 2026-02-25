@@ -6,27 +6,14 @@
 </head>
 <body>
 
-  <h1 id="welcome"></h1>
-
-  <div id="sessionSection" style="margin-top:30px;"></div>
-
-  <br>
+  <h1 id="welcome">Loading...</h1>
   <button id="logoutBtn">Logout</button>
 
   <script type="module">
-    alert("Script loaded");
+    alert("Script started");
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { 
-      getFirestore, 
-      doc, 
-      getDoc, 
-      collection, 
-      getDocs, 
-      addDoc, 
-      query, 
-      where 
-    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyBlwZDPWDZJ6P1cWnJZV_aIdy6MzR9EWKs",
@@ -40,136 +27,27 @@
 
     const app = initializeApp(firebaseConfig);
     alert("Firebase initialized");
-    const auth = getAuth(app);
-    const db = getFirestore(app);
 
+    const auth = getAuth(app);
     const welcome = document.getElementById("welcome");
-    const sessionSection = document.getElementById("sessionSection");
     const logoutBtn = document.getElementById("logoutBtn");
 
-    onAuthStateChanged(auth, async (user) => {
-  alert("Auth state triggered");
+    onAuthStateChanged(auth, (user) => {
+      alert("Auth triggered");
 
-  if (!user) {
-    alert("No user found");
-    window.location.href = "login.html";
-    return;
-  }
-
-  alert("User detected");
-
-  const userDoc = await getDoc(doc(db, "users", user.uid));
-  alert("Fetched user document");
-
-  if (!userDoc.exists()) {
-    alert("Profile not found");
-    window.location.href = "profile.html";
-    return;
-  }
-
-  alert("Profile exists");
-
-  const userData = userDoc.data();
-  welcome.innerText = "Welcome, " + userData.fullName;
-
-  alert("Welcome text set");
-});
-
-      // 🔎 DEBUG: Show all sessions
-      const sessionsRef = collection(db, "sessions");
-      const snapshot = await getDocs(sessionsRef);
-
-      if (snapshot.empty) {
-        sessionSection.innerHTML = "<p>No sessions found in database.</p>";
+      if (!user) {
+        welcome.innerText = "Not logged in";
         return;
       }
 
-      let activeSession = null;
-
-      snapshot.forEach((docSnap) => {
-        const data = docSnap.data();
-        if (data.active === true) {
-          activeSession = {
-            id: docSnap.id,
-            ...data
-          };
-        }
-      });
-
-      if (!activeSession) {
-        sessionSection.innerHTML = "<p>No active session currently.</p>";
-        return;
-      }
-
-      const sessionId = activeSession.id;
-      const sessionName = activeSession.name;
-
-      sessionSection.innerHTML = `<h3>${sessionName}</h3>`;
-
-      // Check if already registered
-      const regQuery = query(
-        collection(db, "sessionParticipants"),
-        where("userId", "==", user.uid),
-        where("sessionId", "==", sessionId)
-      );
-
-      const regSnapshot = await getDocs(regQuery);
-      const registeredRoles = regSnapshot.docs.map(doc => doc.data().role);
-
-      const level = userData.level;
-
-      let canBeMentor = true;
-      let canBeMentee = true;
-
-      if (level === "100L") {
-        canBeMentor = false;
-      }
-
-      if (level === "600L") {
-        canBeMentee = false;
-      }
-
-      if (canBeMentee && !registeredRoles.includes("mentee")) {
-        sessionSection.innerHTML += `<button id="menteeBtn">Apply as Mentee</button><br><br>`;
-      }
-
-      if (canBeMentor && !registeredRoles.includes("mentor")) {
-        sessionSection.innerHTML += `<button id="mentorBtn">Apply as Mentor</button><br><br>`;
-      }
-
-      if (registeredRoles.length > 0) {
-        sessionSection.innerHTML += `<p>You have registered as: ${registeredRoles.join(", ")}</p>`;
-      }
-
-      document.addEventListener("click", async (e) => {
-        if (e.target.id === "menteeBtn") {
-          await addDoc(collection(db, "sessionParticipants"), {
-            userId: user.uid,
-            sessionId: sessionId,
-            role: "mentee",
-            status: "pending",
-            createdAt: new Date()
-          });
-          location.reload();
-        }
-
-        if (e.target.id === "mentorBtn") {
-          await addDoc(collection(db, "sessionParticipants"), {
-            userId: user.uid,
-            sessionId: sessionId,
-            role: "mentor",
-            status: "pending",
-            createdAt: new Date()
-          });
-          location.reload();
-        }
-      });
+      welcome.innerText = "Welcome " + user.email;
     });
 
     logoutBtn.addEventListener("click", async () => {
       await signOut(auth);
       window.location.href = "login.html";
     });
+
   </script>
 
 </body>
