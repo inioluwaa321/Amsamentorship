@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mentor Commitment – AMSA Mentorship</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Mentor Commitment – AMSA Mentorship</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="mentor-hero">
-    <h1>Before You Apply as a Mentor</h1>
-    <h3>
-        Being a mentor in the AMSA Academic Mentorship Program is a leadership responsibility.
-        By applying, you agree to guide, support, and communicate with your mentee consistently.
-        <br><br>
-        All mentors will receive a certificate from AMSA at the end of the session.
-        To qualify for the certificate, you must:
-        <ol>
-            <li>Be assigned an active mentee</li>
-            <li>Attend the AMSA Mentorship Training Program</li>
-            <li>Maintain consistent mentorship from start to finish</li>
-        </ol>
-        Please note: Mentors who fail to fulfill their duties or are inconsistent with their mentee may be removed from the program.
-        In such cases, the mentee will be reassigned to another mentor to ensure continuity.
-    </h3>
+
+<h1>BEFORE YOU APPLY AS A MENTOR</h1>
+
+<div class="mentor-card">
+
+<p>
+Being a mentor in the AMSA Academic Mentorship Program is a leadership responsibility.
+By applying, you agree to guide, support, and communicate with your mentee consistently.
+</p>
+
+<p>
+All mentors will receive a certificate from AMSA at the end of the session.
+To qualify for the certificate, you must:
+</p>
+
+<ol>
+<li>Be assigned an active mentee</li>
+<li>Attend the AMSA Mentorship Training Program</li>
+<li>Maintain consistent mentorship from start to finish</li>
+</ol>
+
+<p>
+Please note: Mentors who fail to fulfill their duties or are inconsistent with their mentee
+may be removed from the program. In such cases, the mentee will be reassigned to another mentor
+to ensure continuity.
+</p>
+
+</div>
+
 </header>
 
+
 <section class="mentor-checkbox">
-    <label>
-        <input type="checkbox" id="mentor-ack">
-        I understand and wish to continue
-    </label>
+
+<label>
+<input type="checkbox" id="mentor-ack">
+I understand and wish to continue
+</label>
+
 </section>
 
+
+<div class="mentor-button-container">
+
 <a href="https://forms.gle/YBDPFYvyT4ULs11b8" target="_blank">
-  <button class="mentor-btn">Register as a Mentor</button>
+<button id="mentorBtn" class="mentor-btn">Register as a Mentor</button>
 </a>
 
-<script>
-    // Checkbox logic to show buttons
-    const checkbox = document.getElementById('mentor-ack');
-    const levelsSection = document.getElementById('mentor-levels');
+</div>
 
-    checkbox.addEventListener('change', function() {
-        if(this.checked) {
-            levelsSection.style.display = 'block';
-        } else {
-            levelsSection.style.display = 'none';
-        }
-    });
+
+<script>
+
+const checkbox = document.getElementById("mentor-ack");
+const mentorBtn = document.getElementById("mentorBtn");
+
+mentorBtn.style.display = "none";
+
+checkbox.addEventListener("change", function(){
+
+if(this.checked){
+mentorBtn.style.display = "inline-block";
+}
+else{
+mentorBtn.style.display = "none";
+}
+
+});
+
 </script>
-<script src="mentor.js"></script>
 
 </body>
 </html>
