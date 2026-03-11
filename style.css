@@ -611,3 +611,22 @@ z-index:1000;
 }
 
 }
+.nav-menu {
+  transition: all 0.3s ease;
+}
+
+.nav-menu.active {
+  display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
