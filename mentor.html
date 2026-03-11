@@ -10,20 +10,16 @@
 <body>
 
 <header class="mentor-hero">
-
 <h1>BEFORE YOU APPLY AS A MENTOR</h1>
 
-<div class="mentor-card">
-
-<p>
+<h3>
 Being a mentor in the AMSA Academic Mentorship Program is a leadership responsibility.
 By applying, you agree to guide, support, and communicate with your mentee consistently.
-</p>
 
-<p>
+<br><br>
+
 All mentors will receive a certificate from AMSA at the end of the session.
 To qualify for the certificate, you must:
-</p>
 
 <ol>
 <li>Be assigned an active mentee</li>
@@ -31,15 +27,13 @@ To qualify for the certificate, you must:
 <li>Maintain consistent mentorship from start to finish</li>
 </ol>
 
-<p>
 Please note: Mentors who fail to fulfill their duties or are inconsistent with their mentee
-may be removed from the program. In such cases, the mentee will be reassigned to another mentor
-to ensure continuity.
-</p>
-
-</div>
+may be removed from the program. In such cases, the mentee will be reassigned to another
+mentor to ensure continuity.
+</h3>
 
 </header>
+
 
 <section class="mentor-checkbox">
 <label>
@@ -48,13 +42,19 @@ I understand and wish to continue
 </label>
 </section>
 
+
 <div class="mentor-levels" id="mentor-levels">
+
+<div class="level-buttons">
 
 <a href="https://forms.gle/YBDPFYvyT4ULs11b8" target="_blank">
 <button class="mentor-btn">Register as a Mentor</button>
 </a>
 
 </div>
+
+</div>
+
 
 <script>
 
@@ -66,7 +66,7 @@ mentorLevels.style.display = "none";
 checkbox.addEventListener('change', function(){
 
 if(this.checked){
-mentorLevels.style.display = "flex";
+mentorLevels.style.display = "block";
 }
 else{
 mentorLevels.style.display = "none";
