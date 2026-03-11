@@ -364,3 +364,109 @@ align-items:center;
 }
 
 }
+/* ===== NAVBAR ===== */
+
+.site-nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:#1C1C1C;
+color:white;
+}
+
+.site-nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+.nav-logo{
+font-weight:bold;
+font-size:18px;
+}
+
+
+
+/* ===== FAQ HERO ===== */
+
+.faq-hero{
+background:linear-gradient(rgba(0,0,0,0.5), rgba(139,0,0,0.4)),
+url('https://i.postimg.cc/MKBvZ9vW/IMG-5187.jpg');
+background-size:cover;
+background-position:center;
+text-align:center;
+color:white;
+padding:120px 20px 80px 20px;
+}
+
+.faq-hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+
+
+/* ===== FAQ SECTION ===== */
+
+.faq-section{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+}
+
+.faq-item{
+background:white;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+overflow:hidden;
+}
+
+.faq-question{
+width:100%;
+padding:18px 22px;
+background:none;
+border:none;
+text-align:left;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+padding:0 22px 20px 22px;
+line-height:1.6;
+}
+
+.faq-answer.show{
+display:block;
+}
+
+
+
+/* ===== CHAT BUTTON ===== */
+
+.faq-contact{
+text-align:center;
+padding:60px 20px;
+}
+
+.chat-btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.chat-btn:hover{
+background:#1ebe5d;
+transform:translateY(-2px);
+}
