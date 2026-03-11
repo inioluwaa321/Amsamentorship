@@ -41,40 +41,35 @@ to ensure continuity.
 
 </header>
 
-
 <section class="mentor-checkbox">
-
 <label>
 <input type="checkbox" id="mentor-ack">
 I understand and wish to continue
 </label>
-
 </section>
 
-
-<div class="mentor-button-container">
+<div class="mentor-levels" id="mentor-levels">
 
 <a href="https://forms.gle/YBDPFYvyT4ULs11b8" target="_blank">
-<button id="mentorBtn" class="mentor-btn">Register as a Mentor</button>
+<button class="mentor-btn">Register as a Mentor</button>
 </a>
 
 </div>
 
-
 <script>
 
-const checkbox = document.getElementById("mentor-ack");
-const mentorBtn = document.getElementById("mentorBtn");
+const checkbox = document.getElementById('mentor-ack');
+const mentorLevels = document.getElementById('mentor-levels');
 
-mentorBtn.style.display = "none";
+mentorLevels.style.display = "none";
 
-checkbox.addEventListener("change", function(){
+checkbox.addEventListener('change', function(){
 
 if(this.checked){
-mentorBtn.style.display = "inline-block";
+mentorLevels.style.display = "flex";
 }
 else{
-mentorBtn.style.display = "none";
+mentorLevels.style.display = "none";
 }
 
 });
