@@ -281,3 +281,86 @@ body {
     .mentor-hero h1 { font-size: 32px; }
     .mentor-hero h3 { font-size: 16px; }
 }
+/* ===== ABOUT PAGE ===== */
+
+.about-hero{
+background: linear-gradient(rgba(0,0,0,0.5), rgba(139,0,0,0.4)),
+url('https://i.postimg.cc/MKBvZ9vW/IMG-5187.jpg');
+background-size: cover;
+background-position: center;
+color: white;
+text-align: center;
+padding: 120px 20px 80px 20px;
+}
+
+.about-hero h1{
+font-size: 42px;
+margin-bottom: 15px;
+}
+
+.about-subtitle{
+font-size: 18px;
+max-width: 700px;
+margin: auto;
+line-height: 1.6;
+}
+
+.about-section{
+padding: 70px 20px;
+text-align: center;
+}
+
+.about-title{
+font-size: 30px;
+margin-bottom: 30px;
+color: #8B0000;
+}
+
+.about-card{
+max-width: 800px;
+margin: auto;
+background: white;
+padding: 35px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+line-height: 1.7;
+}
+
+.offer-grid{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 25px;
+margin-top: 30px;
+}
+
+.offer-card{
+background: white;
+padding: 25px;
+width: 240px;
+border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.offer-card h3{
+color: #8B0000;
+margin-bottom: 10px;
+}
+
+.about-cta{
+text-align: center;
+padding: 80px 20px;
+}
+
+@media (max-width:768px){
+
+.about-hero h1{
+font-size:32px;
+}
+
+.offer-grid{
+flex-direction:column;
+align-items:center;
+}
+
+}
