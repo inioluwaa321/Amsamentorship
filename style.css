@@ -675,3 +675,66 @@ resize:none;
 .feedback-form button{
 margin-top:10px;
 }
+button,
+.mentor-btn,
+.feedback-btn {
+
+display:inline-block;
+padding:16px 28px;
+font-size:16px;
+font-weight:600;
+
+background:#c40000;
+color:white;
+
+border:none;
+border-radius:10px;
+
+cursor:pointer;
+
+box-shadow:0 6px 14px rgba(0,0,0,0.2);
+transition:all 0.2s ease;
+
+}
+
+button:hover,
+.mentor-btn:hover,
+.feedback-btn:hover{
+
+background:#a80000;
+transform:translateY(-2px);
+
+}
+.feedback-form button{
+width:100%;
+max-width:300px;
+margin:20px auto;
+display:block;
+}
+.feedback-form{
+
+background:white;
+padding:28px;
+
+border-radius:14px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+}
+.feedback-form label{
+
+margin-top:10px;
+font-size:16px;
+
+}
+@media (max-width:600px){
+
+.feedback-section{
+padding:30px 18px;
+}
+
+.feedback-section h1{
+font-size:28px;
+}
+
+}
