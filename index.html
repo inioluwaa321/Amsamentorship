@@ -55,7 +55,28 @@
     <p>Connect, set goals, and start your mentorship experience.</p>
   </div>
 </div>
+<section class="stats-section">
 
+<div class="stats-slider">
+
+<div class="stat-slide active">
+<h2>Hundreds of ABUAD medical students have benefited from the AMSA Academic Mentorship Program.</h2>
+<p>Don't miss out this year.</p>
+</div>
+
+<div class="stat-slide">
+<h2>More than 15 mentors volunteered their time to support junior students last session.</h2>
+<p>Join the program and make an impact.</p>
+</div>
+
+<div class="stat-slide">
+<h2>Students across multiple levels received academic guidance and support last year.</h2>
+<p>Be part of the next mentorship cycle.</p>
+</div>
+
+</div>
+
+</section>
 <section class="info-section">
     <h2>Want to know more?</h2>
     <div class="info-buttons">
@@ -115,6 +136,28 @@ const navMenu = document.querySelector(".nav-menu");
 menu.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
+</script>
+    <script>
+
+let slides = document.querySelectorAll(".stat-slide");
+let index = 0;
+
+function showSlide(){
+
+slides.forEach(slide => slide.classList.remove("active"));
+
+slides[index].classList.add("active");
+
+index++;
+
+if(index === slides.length){
+index = 0;
+}
+
+}
+
+setInterval(showSlide, 4000);
+
 </script>
 </body>
 </html>
