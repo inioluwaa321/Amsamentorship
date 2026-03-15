@@ -66,7 +66,7 @@
 
 <div class="stat-slide">
 <h2>More than 250 mentors volunteered to the program last year.</h2>
-<p>Whats stopping you? Join the program now  and make an impact.</p>
+<p>What's stopping you? Join the program now  and make an impact.</p>
 </div>
 
 <div class="stat-slide">
@@ -157,6 +157,39 @@ index = 0;
 }
 
 setInterval(showSlide, 4000);
+
+</script>
+    <div id="feedback-popup" class="popup-overlay">
+
+<div class="popup-card">
+
+<h2>Did you participate in last year's mentorship program?</h2>
+
+<p>Your experience can help improve the next mentorship cycle.</p>
+
+<div class="popup-buttons">
+
+<a href="feedback.html" class="popup-btn">Share Feedback</a>
+
+<button id="close-popup" class="popup-close">Maybe Later</button>
+
+</div>
+
+</div>
+
+</div>
+    <script>
+
+const popup = document.getElementById("feedback-popup");
+const closeBtn = document.getElementById("close-popup");
+
+setTimeout(() => {
+popup.classList.add("show");
+}, 20000);
+
+closeBtn.addEventListener("click", () => {
+popup.classList.remove("show");
+});
 
 </script>
 </body>
