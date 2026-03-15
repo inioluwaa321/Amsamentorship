@@ -895,7 +895,7 @@ align-items:center;
 opacity:0;
 pointer-events:none;
 
-transition:0.3s ease;
+transition:opacity 0.35s ease;
 
 z-index:2000;
 }
@@ -916,6 +916,16 @@ width:90%;
 text-align:center;
 
 box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
+transform:translateY(30px);
+opacity:0;
+
+transition:all 0.35s ease;
+}
+
+.popup-overlay.show .popup-card{
+transform:translateY(0);
+opacity:1;
 }
 
 .popup-card h2{
