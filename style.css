@@ -675,34 +675,73 @@ resize:none;
 .feedback-form button{
 margin-top:10px;
 }
-button,
+/* ===== UNIFIED BUTTON SYSTEM ===== */
+
+.info-btn,
 .mentor-btn,
-.feedback-btn {
+.feedback-btn,
+.feedback-form button,
+.cta-buttons a {
 
 display:inline-block;
-padding:16px 28px;
-font-size:16px;
+
+padding:18px 32px;
+
+font-size:17px;
 font-weight:600;
 
-background:#c40000;
-color:white;
-
-border:none;
 border-radius:10px;
 
+text-decoration:none;
 cursor:pointer;
 
-box-shadow:0 6px 14px rgba(0,0,0,0.2);
-transition:all 0.2s ease;
+transition:all 0.3s ease;
 
 }
 
-button:hover,
-.mentor-btn:hover,
-.feedback-btn:hover{
+/* RED BUTTONS */
 
-background:#a80000;
-transform:translateY(-2px);
+.info-btn,
+.mentor-btn,
+.feedback-btn,
+.feedback-form button {
+
+background:linear-gradient(45deg,#8B0000,#b30000);
+color:white;
+
+box-shadow:0 6px 15px rgba(139,0,0,0.4);
+
+}
+
+.info-btn:hover,
+.mentor-btn:hover,
+.feedback-btn:hover,
+.feedback-form button:hover{
+
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(139,0,0,0.6);
+
+}
+
+/* BLACK BUTTON */
+
+.mentee-btn{
+
+background:#1C1C1C;
+color:white;
+
+padding:18px 32px;
+font-size:17px;
+border-radius:10px;
+
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
+
+}
+
+.mentee-btn:hover{
+
+background:#333;
+transform:translateY(-3px);
 
 }
 .feedback-form button{
